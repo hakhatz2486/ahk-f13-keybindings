@@ -36,8 +36,8 @@ F13 & WheelUp::SoundSetVolume("+4")
 F13 & WheelDown::SoundSetVolume("-4")
 
 ; Lockキー
-F13 & c::Send("{Blind}+{CapsLock}")
-F13 & n::Send("{Blind}{NumLock}")
++F13 & c::Send("{Blind}+{CapsLock}")
++F13 & n::Send("{Blind}{NumLock}")
 
 ;ブラウザ
 F13 & ,::Send("{Blind}!{Left}")
