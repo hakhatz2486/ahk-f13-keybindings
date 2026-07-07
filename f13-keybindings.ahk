@@ -30,12 +30,18 @@ F13 & v:: {
 ; メディア操作
 F13 & p::Media_Play_Pause ; メディアの再生を停止
 F13 & m::Volume_Mute      ; 音声をミュート
-F13 & WheelUp::SoundSetVolume("+4")   ; 音量を上げる
-F13 & WheelDown::SoundSetVolume("-4") ; 音量を下げる
+F13 & WheelUp:: {
+    SoundSetVolume("+4") ; 音量を上げる
+}
+F13 & WheelDown:: {
+    SoundSetVolume("-4") ; 音量を下げる
+}
 
 ; Lockキー
-+F13 & c::Send("{Blind}+{CapsLock}")
-+F13 & n::Send("{Blind}{NumLock}")
+#HotIf GetKeyState("Shift", "P")
+F13 & c::Send("{Blind}+{CapsLock}")
+F13 & n::Send("{Blind}{NumLock}")
+#HotIf
 
 ;ブラウザ
 F13 & ,::Send("{Blind}!{Left}")  ; Alt + ←: 前のページ
