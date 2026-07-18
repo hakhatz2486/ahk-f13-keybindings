@@ -43,6 +43,11 @@ F13 & c::Send("{Blind}+{CapsLock}")
 F13 & n::Send("{Blind}{NumLock}")
 #HotIf
 
-;ブラウザ
+; ブラウザ
 F13 & ,::Send("{Blind}!{Left}")  ; Alt + ←: 前のページ
 F13 & .::Send("{Blind}!{Right}") ; Alt + →: 次のページ
+
+; 日付と時刻の挿入
+F13 & t::SendInput(FormatTime(, "yyyy-MM-dd'T'HH:mm")) ; 2026-07-18T22:49
+F13 & r::SendInput(FormatTime(, "yyyy-MM-dd"))         ; 2026-07-18
+F13 & y::SendInput(FormatTime(, "HH:mm"))              ; 22:49
