@@ -47,3 +47,19 @@ F13 & .::Send("{Blind}!{Right}") ; Alt + →: 次のページ
 F13 & t::SendInput(FormatTime(, "yyyy-MM-dd'T'HH:mm")) ; 2026-07-18T22:49
 F13 & r::SendInput(FormatTime(, "yyyy-MM-dd"))         ; 2026-07-18
 F13 & y::SendInput(FormatTime(, "HH:mm"))              ; 22:49
+
+; 日付と時刻の挿入(区切り文字なし)
+#HotIf GetKeyState("Alt", "P")
+F13 & t:: {
+    SendInput("{Alt up}")
+    SendInput(FormatTime(, "yyyyMMdd'T'HHmm")) ; 20260724T1430
+}
+F13 & r:: {
+    SendInput("{Alt up}")
+    SendInput(FormatTime(, "yyyyMMdd")) ; 20260724
+}
+F13 & y:: {
+    SendInput("{Alt up}")
+    SendInput(FormatTime(, "HHmm")) ; 1430
+}
+#HotIf
